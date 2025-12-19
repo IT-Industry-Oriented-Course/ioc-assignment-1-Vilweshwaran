@@ -151,6 +151,24 @@ python -m pytest tests/test_agent.py -v
 | `DRY_RUN_MODE` | Default dry-run setting | `false` |
 | `AUDIT_LOG_PATH` | Path to audit log | `logs/audit.jsonl` |
 
+## ❓ Troubleshooting
+
+### Common Issues
+
+**1. `NameError: name 'appointments' is not defined`**
+- This issue has been resolved in the latest version. Please ensure you have the latest `app.py`.
+
+**2. Streamlit UI shows raw HTML code**
+- This was a rendering issue that has been fixed. Refresh your browser or restart the app.
+
+**3. "Appointment not booked" / "Not Eligible"**
+- If you see "Not Eligible" for insurance, it might be because the mock patient (e.g., P003) has inactive insurance.
+- Try using **Ravi Kumar (P001)** or **Sarah Johnson (P002)** for successful bookings.
+
+**4. `HF_API_TOKEN` errors**
+- Ensure you have a valid Hugging Face token in your `.env` file.
+- If you don't have a token, you can run in **Dry Run Mode** or the agent will fall back to rule-based parsing (limited functionality).
+
 ## 📝 License
 
 This project is for educational purposes as part of a healthcare AI assignment.
